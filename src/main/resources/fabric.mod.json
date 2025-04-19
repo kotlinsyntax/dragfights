@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "dragfights",
+	"version": "${version}",
+	"name": "dragfights",
+	"description": "Mod for dragfights",
+	"authors": [
+		"constexpr"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": "https://github.com/kotlinsyntax/dragfights"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/dragfights/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "sh.lumin.Dragfights",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "sh.lumin.DragfightsClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"dragfights.mixins.json",
+		{
+			"config": "dragfights.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
